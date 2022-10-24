@@ -4,6 +4,7 @@ describe('Validando cenários de logins', () => {
   it('Realizar Login', () => {
     createLogin.createLogin()
       .should((response) => {
+        cy.log(JSON.stringify(response))
         expect(response.status).to.eql(200)
         expect(response.status).to.be.not.null
         expect(response.body.message).to.eq('Login realizado com sucesso')
